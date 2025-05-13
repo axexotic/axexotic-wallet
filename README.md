@@ -68,17 +68,3 @@ Then open `index.html` in your browser.
 ## 🤝 License
 
 MIT License – free for personal and commercial use. Credit appreciated.
-
-````
-
----
-
-### ✅ What To Do:
-1. Copy the above text
-2. Paste it into a file named `README.md` in your project folder
-3. Commit it:
-```bash
-git add README.md
-git commit -m "Add project README"
-git push origin main
-````
