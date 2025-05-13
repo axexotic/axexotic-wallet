@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AxeExotic Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Include html2pdf.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<h1>AxeExotic Wallet</h1>
+
+<!-- Clock Section -->
+<div class="clock-container">
+  <!-- Current Clock -->
+  <div class="analog-clock" id="currentClockContainer">
+    <canvas id="currentClock" width="150" height="150"></canvas>
+    <p>Current Time</p>
+  </div>
+
+  <!-- Date between clocks -->
+  <div class="date-display" id="monthText">Loading...</div>
+
+  <!-- World Clock -->
+  <div class="analog-clock" id="worldClockContainer">
+    <canvas id="worldClock" width="150" height="150"></canvas>
+    <p>World Clock</p>
+    <select id="worldTimezoneSelect" title="Select World Timezone">
+      <option value="UTC">UTC</option>
+      <option value="Asia/Karachi">Karachi</option>
+      <option value="America/New_York">New York</option>
+      <option value="Europe/London">London</option>
+    </select>
+  </div>
+</div>
+
+<!-- Main Layout -->
+<div class="main-layout">
+  <div class="left-panel">
+    <div class="card-info-display">
+      <h3>Card Preview</h3>
+      <div id="cardPreview" class="user-card"></div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <!-- Calendar -->
+    <div class="calendarAndCard">
+      <div class="calendar-container">
+        <h3>AxeExotic Calendar</h3>
+        <div id="calendar"></div>
+        <select id="calendarType" title="Select Calendar Type">
+          <option value="gregorian" selected>Gregorian</option>
+          <option value="islamic">Islamic</option>
+          <option value="hebrew">Hebrew</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wallet Form -->
+<form id="walletForm">
+  <p><strong>Profile Picture:</strong></p>
+  <input type="file" accept="image/*" id="profilePic" onchange="loadImage(event)">
+  <img id="preview" src="" alt="Preview Image">
+
+  <p><strong>Full Name:</strong></p>
+  <input type="text" name="fullName" required placeholder="John Doe">
+
+  <p><strong>Address:</strong></p>
+  <input type="text" name="address" required placeholder="123 Main St">
+
+  <p><strong>Phone Number:</strong></p>
+  <input type="text" name="phone" required placeholder="123-456-7890">
+
+  <p><strong>Email:</strong></p>
+  <input type="email" name="email" required placeholder="example@example.com">
+
+  <p><strong>Zip Code:</strong></p>
+  <input type="text" name="zip" required placeholder="12345">
+
+  <p><strong>City:</strong></p>
+  <input type="text" name="city" required placeholder="New York">
+
+  <p><strong>Province:</strong></p>
+  <input type="text" name="province" required placeholder="New York">
+
+  <p><strong>Card Number:</strong></p>
+  <input type="text" name="cardNumber" required placeholder="1234 5678 9012 3456">
+
+  <p><strong>Card Type:</strong></p>
+  <select name="cardType" required>
+    <option>Visa</option>
+    <option>MasterCard</option>
+    <option>Amex</option>
+  </select>
+
+  <p><strong>Expiry Date:</strong></p>
+  <select id="expiryMonth" name="expiryMonth" required></select>
+  <select id="expiryYear" name="expiryYear" required></select>
+
+  <p><strong>CVV:</strong></p>
+  <input type="text" name="cvv" required placeholder="123">
+
+  <button type="button" onclick="saveWallet()">Save Wallet</button>
+  <button type="button" id="downloadButton">Download Wallet</button>
+</form>
+
+<!-- Add the Theme Toggle Button -->
+<button id="themeToggle">Toggle Dark/Light Mode</button>
+
+<!-- Add the Export to PDF Button -->
+<button id="exportPdfButton">Export to PDF</button>
+
+<hr>
+<h3>Saved Wallets</h3>
+<div id="savedWallets"></div>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

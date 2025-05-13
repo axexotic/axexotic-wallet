@@ -1,0 +1,228 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  background-blend-mode: multiply;
+  color: #f44336;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #f44336;
+}
+
+form {
+  background-color: rgba(30, 30, 30, 0.85);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+  margin-top: 30px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff416c;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  background: #121212;
+  border: 1px solid #333;
+  color: #ff416c;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  border-color: #f44336;
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+img {
+  max-width: 150px;
+  margin-top: 10px;
+  display: block;
+}
+
+.user-card {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #ff416c;
+}
+
+/* Clock section styling */
+.clock-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.analog-clock {
+  text-align: center;
+  margin: 10px;
+}
+
+/* Clock titles */
+.analog-clock p {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* DATE DISPLAY - between clocks */
+.date-display {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: rgba(30, 30, 30, 0.85); /* matches clocks */
+  color: #ff416c;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ff416c;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main layout split */
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  min-width: 280px;
+}
+
+#monthText {
+  text-align: center;
+  background-color: rgba(255, 65, 108, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #ff416c;
+  border: 1px solid #ff416c;
+}
+
+/* Calendar and card layout */
+.calendar-container {
+  background-color: rgba(30, 30, 30, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+#calendar {
+  border: 1px solid #ff416c;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #121212;
+  color: #ff416c;
+}
+
+.card-info-display {
+  background-color: rgba(30, 30, 30, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+#cardPreview {
+  margin-top: 10px;
+}
+
+/* CALENDAR + CARD PREVIEW AS ONE BLOCK */
+.calendarAndCard {
+  background-color: rgba(30, 30, 30, 0.85);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background: #f4f4f4;
+  color: #222;
+}
+
+body.light-mode form,
+body.light-mode .calendarAndCard,
+body.light-mode .user-card,
+body.light-mode .card-info-display {
+  background-color: #fff;
+  color: #222;
+}
+
+body.light-mode input,
+body.light-mode select {
+  background: #eee;
+  color: #222;
+}
+
+body.light-mode .analog-clock p {
+  background: none;
+  -webkit-text-fill-color: inherit;
+  color: #222;
+}
+
+body.light-mode #monthText {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+body.light-mode #calendar {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .date-display {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #222;
+  border: 1px solid #ccc;
+}
